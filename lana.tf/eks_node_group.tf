@@ -1,7 +1,7 @@
 resource "aws_eks_node_group" "node-grp" {
   cluster_name    = aws_eks_cluster.eks.name
   node_group_name = "eks-nodegroup"
-  node_role_arn   = aws_iam_role.eks-role.arn
+  node_role_arn   = aws_iam_role.node-role.arn
   subnet_ids      = [aws_subnet.robo-1.id, aws_subnet.robo-2.id]
   capacity_type = "ON_DEMAND"
   disk_size = "20"
