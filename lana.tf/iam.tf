@@ -20,36 +20,6 @@ resource "aws_iam_role" "eks-role" {
   }
 }
 
-AccessKubernetesApi {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "eks:ListFargateProfiles",
-                "eks:DescribeNodegroup",
-                "eks:ListNodegroups",
-                "eks:ListUpdates",
-                "eks:AccessKubernetesApi",
-                "eks:ListAddons",
-                "eks:DescribeCluster",
-                "eks:DescribeAddonVersions",
-                "eks:ListClusters",
-                "eks:ListIdentityProviderConfigs",
-                "iam:ListRoles"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": "ssm:GetParameter",
-            "Resource": "arn:aws:ssm:*:939262682980:parameter/*"
-        }
-    ]
-}  
-
-
-
 
 
 resource "aws_iam_role_policy_attachment" "AmazonEKSClusterPolicy" {
