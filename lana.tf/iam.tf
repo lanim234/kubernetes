@@ -20,7 +20,7 @@ resource "aws_iam_role" "eks-role" {
   }
 }
 
-{
+AccessKubernetesApi {
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -47,6 +47,7 @@ resource "aws_iam_role" "eks-role" {
         }
     ]
 }  
+
 
 
 
